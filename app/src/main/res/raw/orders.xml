@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<orders date="2014-05-07 10:11">
+  <order id="203175" state="new">
+    <name>Фещенок Сергей Михайлович</name>
+    <phone>+375292315734</phone>
+    <email>efes112@mail.ru</email>
+    <date>05.05.14 22:47</date>
+    <address>Светлогорск, м-он Молодежный, д.1, кв.112, 247431</address>
+    <index>247431</index>
+    <paymentType>Наличными</paymentType>
+    <deliveryType>Почтой, наложным платежом, только по РБ</deliveryType>
+    <priceBYR>117600.00</priceBYR>
+    <items>
+      <item id="4241465">
+        <name>Смазка для цепи Sonax (Германия)</name>
+        <quantity>1.00</quantity>
+        <currency>USD</currency>
+        <image>https://images.by.prom.st/11960672_w640_h640_sonax804300.jpg</image>
+        <url>http://iteya.deal.by/p4241465-smazka-dlya-tsepi.html</url>
+        <price>117600.00</price>
+        <sku>804300</sku>
+      </item>
+    </items>
+  </order>
+  <order id="202915" state="declined">
+    <name>Фещенок Сергей Михайлович</name>
+    <phone>+375292315734</phone>
+    <email>efes112@mail.ru</email>
+    <date>05.05.14 15:45</date>
+    <address>Светлогорск, м-он Молодежный, д.1, кв.112, 247431</address>
+    <index>247431</index>
+    <paymentType>Наличными</paymentType>
+    <deliveryType>Почтой, наложным платежом, только по РБ</deliveryType>
+    <priceBYR>156800.00</priceBYR>
+    <items>
+      <item id="2823143">
+        <name>Смазка для цепи Castrol Chain Spray O-R</name>
+        <quantity>1.00</quantity>
+        <currency>USD</currency>
+        <image>https://images.by.prom.st/8743059_w640_h640_castrol_chain_spray_or.jpg</image>
+        <url>http://iteya.deal.by/p2823143-smazka-dlya-tsepi.html</url>
+        <price>156800.00</price>
+        <sku>Chain Spray O-R</sku>
+      </item>
+    </items>
+  </order>
+  <order id="202790" state="declined">
+    <name>Дмитрий</name>
+    <phone>+375296949780</phone>
+    <email>nospam@mail.com</email>
+    <date>05.05.14 11:19</date>
+    <address>Минск, Ольшевского 1-Б, 108</address>
+    <paymentType>Наличными</paymentType>
+    <deliveryType>Курьером по Минску (40 000 руб.)</deliveryType>
+    <deliveryCost>40000</deliveryCost>
+    <priceBYR>323400.00</priceBYR>
+    <items>
+      <item id="3228864">
+        <name>Клавиатура Trust eLight LED Illuminated Keyboard</name>
+        <quantity>1.00</quantity>
+        <currency>USD</currency>
+        <image>https://images.by.prom.st/9599624_w640_h640_173646.jpg</image>
+        <url>http://iteya.deal.by/p3228864-klaviatura-trust-elight.html</url>
+        <price>323400.00</price>
+        <sku>17372</sku>
+      </item>
+    </items>
+  </order>
+  <order id="198272" state="declined">
+    <name>Дима</name>
+    <phone>+37529567689900</phone>
+    <email>dimon-nik1@mail.ru</email>
+    <date>22.04.14 21:53</date>
+    <address>Минск, Проспект независимости 98</address>
+    <paymentType>Наличными</paymentType>
+    <deliveryType>Курьером по Минску (40 000 руб.)</deliveryType>
+    <deliveryCost>40000</deliveryCost>
+    <priceBYR>333200.00</priceBYR>
+    <items>
+      <item id="4250116">
+        <name>Аккумулятор 6V 11Ah 50A FIAMM 6N11A-1B WIND</name>
+        <quantity>1.00</quantity>
+        <currency>USD</currency>
+        <image>https://images.by.prom.st/11986414_w640_h640_6n11a1b.jpg</image>
+        <url>http://iteya.deal.by/p4250116-akkumulyator-11ah-50a.html</url>
+        <price>333200.00</price>
+        <sku>7904139</sku>
+      </item>
+    </items>
+  </order>
+  <order id="196656" state="closed">
+    <name>грузд виталий анатольевич</name>
+    <phone>+375291224718</phone>
+    <email></email>
+    <date>18.04.14 10:51</date>
+    <address>Кличев, пролетарская 39, 213900</address>
+    <index>213900</index>
+    <paymentType>Наличными</paymentType>
+    <deliveryType>Почтой, наложным платежом, только по РБ</deliveryType>
+    <priceBYR>284200.00</priceBYR>
+    <items>
+      <item id="4250152">
+        <name>Аккумулятор 3.6Ah 40A FIAMM FTX4L-BS STORM</name>
+        <quantity>1.00</quantity>
+        <currency>USD</currency>
+        <image>https://images.by.prom.st/11986509_w640_h640_ftx4lbs.jpg</image>
+        <url>http://iteya.deal.by/p4250152-akkumulyator-36ah-40a.html</url>
+        <price>284200.00</price>
+        <sku>7902871</sku>
+      </item>
+    </items>
+  </order>
+  <order id="196273" state="closed">
+    <name>Николай</name>
+    <phone>+375296721355</phone>
+    <email>6721355@tut.by</email>
+    <date>17.04.14 10:36</date>
+    <address>Минск, ул. Аэродромная, 4 оф.601</address>
+    <paymentType>Наличными</paymentType>
+    <deliveryType>Курьером по Минску (40 000 руб.)</deliveryType>
+    <deliveryCost>40000</deliveryCost>
+    <priceBYR>915908.00</priceBYR>
+    <items>
+      <item id="2907071">
+        <name>Масло моторное Hyundai KIA 5W20 бензиновая синтетика 4 литра</name>
+        <quantity>1.00</quantity>
+        <currency>USD</currency>
+        <image>https://images.by.prom.st/8838621_w640_h640_05100004511228x228.png</image>
+        <url>http://iteya.deal.by/p2907071-maslo-motornoe-hyundai.html</url>
+        <price>364560.00</price>
+        <sku>05100-00451</sku>
+      </item>
+      <item id="2906213">
+        <name>Масло моторное Hyundai/KIA 5W20 бензиновая синтетика 1 литр</name>
+        <quantity>1.00</quantity>
+        <currency>USD</currency>
+        <image>https://images.by.prom.st/8836666_w640_h640_0510000151.jpg</image>
+        <url>http://iteya.deal.by/p2906213-maslo-motornoe-hyundaikia.html</url>
+        <price>98000.00</price>
+        <sku>05100-00151</sku>
+      </item>
+      <item id="2906947">
+        <name>Антифриз зеленый HYUNDAI KIA 2 литра </name>
+        <quantity>3.00</quantity>
+        <currency>USD</currency>
+        <image>https://images.by.prom.st/8838247_w640_h640_0710000200.jpg</image>
+        <url>http://iteya.deal.by/p2906947-antifriz-zelenyj-hyundai.html</url>
+        <price>151116.00</price>
+        <sku>07100-00200</sku>
+      </item>
+    </items>
+  </order>
+  <order id="195293" state="declined">
+    <name>Жолнерчук Руслан Викторович</name>
+    <phone>+375297275780</phone>
+    <email>lyuda.jolnerchuk@yandex.ru</email>
+    <date>14.04.14 22:39</date>
+    <address>Кобрин, Кобринский р-н, д. Хабовичи, ул. Новая,д. 51, 225875</address>
+    <index>225875</index>
+    <paymentType>Безналичный расчет</paymentType>
+    <deliveryType>Почтой, наложным платежом, только по РБ</deliveryType>
+    <priceBYR>86.24</priceBYR>
+    <items>
+      <item id="4327771">
+        <name>Усилитель Sony XM-N502 1-2 канальный</name>
+        <quantity>1.00</quantity>
+        <currency>USD</currency>
+        <image>https://images.by.prom.st/12305364_w640_h640_xmn502.png</image>
+        <url>http://iteya.deal.by/p4327771-usilitel-sony-n502.html</url>
+        <price>86.24</price>
+        <sku>XM-N502</sku>
+      </item>
+    </items>
+  </order>
+  <order id="195072" state="closed">
+    <name>Шамрук Сергей Александрович</name>
+    <phone>+375336540277</phone>
+    <email>king-lz@tut.by</email>
+    <date>14.04.14 15:37</date>
+    <address>Гродно, Гродно, Кабяка, 37, кв.19, 230020</address>
+    <index>230020</index>
+    <paymentType>Наличными</paymentType>
+    <deliveryType>Почтой, наложным платежом, только по РБ</deliveryType>
+    <priceBYR>370000.00</priceBYR>
+    <items>
+      <item id="3498805">
+        <name>Компрессор STANDART</name>
+        <quantity>1.00</quantity>
+        <currency>BYR</currency>
+        <image>https://images.by.prom.st/10153220_w640_h640_ca03006.jpg</image>
+        <url>http://iteya.deal.by/p3498805-kompressor-standart.html</url>
+        <price>370000.00</price>
+        <sku>CA-030-06</sku>
+      </item>
+    </items>
+  </order>
+  <order id="194042" state="closed">
+    <name>Сергей</name>
+    <phone>+375296780905</phone>
+    <email>13sk78@gmail.com</email>
+    <date>11.04.14 19:53</date>
+    <address>Минск, сам заберу</address>
+    <paymentType>Наличными</paymentType>
+    <deliveryType>Курьером по Минску (40 000 руб.)</deliveryType>
+    <deliveryCost>40000</deliveryCost>
+    <payercomment>Заберу завтра 12.04 сам после 12ти на Пушкинской
+Говорил с виктором по тел 6756560</payercomment>
+    <priceBYR>882000.00</priceBYR>
+    <items>
+      <item id="2827951">
+        <name>Моторное масло Castrol Act&gt;Evo X-tra 4T 10W-40 4л</name>
+        <quantity>2.00</quantity>
+        <currency>USD</currency>
+        <image>https://images.by.prom.st/8749229_w640_h640_act_evo_xtra_4t_10w40_4l.jpg</image>
+        <url>http://iteya.deal.by/p2827951-motornoe-maslo-castrol.html</url>
+        <price>441000.00</price>
+        <sku>4652650090</sku>
+      </item>
+    </items>
+  </order>
+  <order id="193119" state="closed">
+    <name>марина</name>
+    <phone>+375298793861</phone>
+    <email>vitya005@list.ru</email>
+    <date>09.04.14 17:58</date>
+    <address>Минск, ул.Ванеева  д.32</address>
+    <paymentType>Наличными</paymentType>
+    <deliveryType>Курьером по Минску (40 000 руб.)</deliveryType>
+    <deliveryCost>40000</deliveryCost>
+    <priceBYR>235200.00</priceBYR>
+    <items>
+      <item id="2826072">
+        <name>Аккумулятор 4Ah 40A FIAMM FB4L-B WIND</name>
+        <quantity>1.00</quantity>
+        <currency>USD</currency>
+        <image>https://images.by.prom.st/8747027_w640_h640_3950.jpg</image>
+        <url>http://iteya.deal.by/p2826072-akkumulyator-4ah-40a.html</url>
+        <price>235200.00</price>
+        <sku>7903235</sku>
+      </item>
+    </items>
+  </order>
+</orders>

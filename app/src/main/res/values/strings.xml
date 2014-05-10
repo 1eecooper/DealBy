@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DealBy</string>
+    <string name="search_hint">Search orders</string>
+</resources>
