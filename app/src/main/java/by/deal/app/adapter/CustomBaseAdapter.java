@@ -14,12 +14,12 @@ import by.deal.app.R;
 import by.deal.app.xml.OrderItem;
 import by.deal.app.xml.ProductItem;
 
-public class CustomListAdapter extends BaseAdapter {
+public class CustomBaseAdapter extends BaseAdapter {
 
     Context mContext;
     List<OrderItem> mOrders;
 
-    public CustomListAdapter(Context context, List<OrderItem> items) {
+    public CustomBaseAdapter(Context context, List<OrderItem> items) {
         super();
         mContext = context;
         mOrders = items;

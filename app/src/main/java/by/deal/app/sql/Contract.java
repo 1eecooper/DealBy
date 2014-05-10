@@ -15,7 +15,7 @@ public class Contract {
         public static final String PHONE = "phone";
         public static final String EMAIL = "email";
         public static final String ADDRESS = "address";
-        public static final String INDEX = "index";
+        public static final String INDEX = "address_index";
         public static final String PAYMENT_TYPE = "paymentType";
         public static final String DELIVERY_TYPE = "deliveryType";
         public static final String DELIVERY_COST = "deliveryCost";
@@ -34,5 +34,6 @@ public class Contract {
         public static final String URL = "url";
         public static final String PRICE = "price";
         public static final String SKU = "sku";
+        public static final String ORDER_REF = "order_reference";
     }
 }

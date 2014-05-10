@@ -1,13 +1,16 @@
 package by.deal.app.xml;
 
+import android.content.ContentValues;
+import android.database.sqlite.SQLiteDatabase;
 import android.util.Xml;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.List;
+
+import by.deal.app.sql.SQLHelper;
+import by.deal.app.sql.Contract.*;
 
 public class XmlParser {
     static final String ORDER_ITEM = "order";
@@ -38,129 +41,134 @@ public class XmlParser {
     static final String PRODUCT_PRICE = "price";
     static final String PRODUCT_SKU = "sku";
 
-    public List<OrderItem> readXml(InputStream inputStream) {
-        List<OrderItem> items = new ArrayList<OrderItem>();
+    public SQLHelper readXml(InputStream inputStream, SQLHelper sql) {
+        SQLHelper sqlHelper = sql;
+        SQLiteDatabase db = sqlHelper.getWritableDatabase();
+        sqlHelper.clearTables(db);
+        ContentValues orderValues = new ContentValues();
         try {
             XmlPullParser parser = Xml.newPullParser();
             parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
             parser.setInput(inputStream, null);
-            OrderItem orderItem = null;
+            long newRowId;
+            Integer currentOrderId = -1;
 
             outer:
             while (parser.next() != XmlPullParser.END_DOCUMENT) {
                 if (parser.getEventType() == XmlPullParser.START_TAG) {
                     if (parser.getName().equals(ORDER_ITEM)) {
-                        orderItem = new OrderItem();
-                        orderItem.setId(parser.getAttributeValue(null,ORDER_ID));
-                        orderItem.setState(parser.getAttributeValue(null,ORDER_STATE));
+                        currentOrderId = Integer.parseInt(parser.getAttributeValue(null, ORDER_ID));
+                        orderValues.put(OrderEntry.ID, currentOrderId);
+                        orderValues.put(OrderEntry.STATE, parser.getAttributeValue(null, ORDER_STATE));
                         continue outer;
                     }
-                    if (parser.getName().equals(ORDER_NAME) && orderItem.getName() == null) {
-                        orderItem.setName(parser.nextText());
+                    if (parser.getName().equals(ORDER_NAME) && orderValues.get(OrderEntry.NAME) == null) {
+                        orderValues.put(OrderEntry.NAME, parser.nextText());
                         continue outer;
                     }
                     if (parser.getName().equals(ORDER_COMPANY)) {
-                        orderItem.setCompany(parser.nextText());
+                        orderValues.put(OrderEntry.COMPANY, parser.nextText());
                         continue outer;
                     }
                     if (parser.getName().equals(ORDER_PHONE)) {
-                        orderItem.setPhone(parser.nextText());
+                        orderValues.put(OrderEntry.PHONE, parser.nextText());
                         continue outer;
                     }
                     if (parser.getName().equals(ORDER_EMAIL)) {
-                        orderItem.setEmail(parser.nextText());
+                        orderValues.put(OrderEntry.EMAIL, parser.nextText());
                         continue outer;
                     }
                     if (parser.getName().equals(ORDER_DATE)) {
-                        orderItem.setDate(parser.nextText());
+                        orderValues.put(OrderEntry.DATE, parser.nextText());
                         continue outer;
                     }
                     if (parser.getName().equals(ORDER_ADDRESS)) {
-                        orderItem.setAddress(parser.nextText());
+                        orderValues.put(OrderEntry.ADDRESS, parser.nextText());
                         continue outer;
                     }
                     if (parser.getName().equals(ORDER_INDEX)) {
-                        orderItem.setIndex(parser.nextText());
+                        orderValues.put(OrderEntry.INDEX, parser.nextText());
                         continue outer;
                     }
                     if (parser.getName().equals(ORDER_PAYMENTTYPE)) {
-                        orderItem.setPaymentType(parser.nextText());
+                        orderValues.put(OrderEntry.PAYMENT_TYPE, parser.nextText());
                         continue outer;
                     }
                     if (parser.getName().equals(ORDER_DELIVERYTYPE)) {
-                        orderItem.setDeliveryType(parser.nextText());
+                        orderValues.put(OrderEntry.DELIVERY_TYPE, parser.nextText());
                         continue outer;
                     }
                     if (parser.getName().equals(ORDER_DELIVERYCOST)) {
-                        orderItem.setDeliveryCost(parser.nextText());
+                        orderValues.put(OrderEntry.DELIVERY_COST, parser.nextText());
                         continue outer;
                     }
                     if (parser.getName().equals(ORDER_PAYERCOMMENT)) {
-                        orderItem.setPayerComment(parser.nextText());
+                        orderValues.put(OrderEntry.PAYER_COMMENT, parser.nextText());
                         continue outer;
                     }
                     if (parser.getName().equals(ORDER_SALESCOMMENT)) {
-                        orderItem.setSalesComment(parser.nextText());
+                        orderValues.put(OrderEntry.SALES_COMMENT, parser.nextText());
                         continue outer;
                     }
                     if (parser.getName().equals(ORDER_PRICE)) {
-                        orderItem.setPriceBYR(parser.nextText());
+                        orderValues.put(OrderEntry.PRICE_BYR, parser.nextText());
                         continue outer;
                     }
                     if (parser.getName().equals(ORDER_ITEMS)) {
-                        ProductItem productItem = null;
                         if (parser.next() != XmlPullParser.END_TAG) {
+                            ContentValues productValues = null;
 
                             inner:
                             while (!(parser.next() == XmlPullParser.END_TAG && parser.getName().equals(ORDER_ITEMS))) {
                                 if (parser.getEventType() == XmlPullParser.START_TAG) {
                                     if (parser.getName().equals(PRODUCT_ITEM)) {
-                                        productItem = new ProductItem();
-                                        productItem.setId(parser.getAttributeValue(null,PRODUCT_ID));
+                                        productValues =  new ContentValues();
+                                        productValues.put(ProductEntry.ID, parser.getAttributeValue(null, PRODUCT_ID));
                                         continue inner;
                                     }
                                     if (parser.getName().equals(PRODUCT_NAME)) {
-                                        productItem.setName(parser.nextText());
+                                        productValues.put(ProductEntry.NAME, parser.nextText());
                                         continue inner;
                                     }
                                     if (parser.getName().equals(PRODUCT_QUANTITY)) {
-                                        productItem.setQuantity(parser.nextText());
+                                        productValues.put(ProductEntry.QUANTITY, parser.nextText());
                                         continue inner;
                                     }
                                     if (parser.getName().equals(PRODUCT_CURRENCY)) {
-                                        productItem.setCurrency(parser.nextText());
+                                        productValues.put(ProductEntry.CURRENCY, parser.nextText());
                                         continue inner;
                                     }
                                     if (parser.getName().equals(PRODUCT_IMAGE)) {
-                                        productItem.setImage(parser.nextText());
+                                        productValues.put(ProductEntry.IMAGE, parser.nextText());
                                         continue inner;
                                     }
                                     if (parser.getName().equals(PRODUCT_URL)) {
-                                        productItem.setUrl(parser.nextText());
+                                        productValues.put(ProductEntry.URL, parser.nextText());
                                         continue inner;
                                     }
                                     if (parser.getName().equals(PRODUCT_PRICE)) {
-                                        productItem.setPrice(parser.nextText());
+                                        productValues.put(ProductEntry.PRICE, parser.nextText());
                                         continue inner;
                                     }
                                     if (parser.getName().equals(PRODUCT_SKU)) {
-                                        productItem.setSku(parser.nextText());
+                                        productValues.put(ProductEntry.SKU, parser.nextText());
                                         continue inner;
                                     }
                                 }
                                 if (parser.getEventType() == XmlPullParser.END_TAG) {
                                     if (parser.getName().equals(PRODUCT_ITEM)) {
-                                        orderItem.addProduct(productItem);
+                                        productValues.put(ProductEntry.ORDER_REF, currentOrderId);
+                                        db.insert(ProductEntry.TABLE_NAME, null, productValues);
                                     }
                                 }
-                                //parser.next();
                             }
                         }
                     }
                 }
                 if (parser.getEventType() == XmlPullParser.END_TAG) {
                     if (parser.getName().equals(ORDER_ITEM)) {
-                        items.add(orderItem);
+                        db.insert(OrderEntry.TABLE_NAME, null, orderValues);
+                        orderValues.clear();
                     }
                 }
             }
@@ -168,26 +176,9 @@ public class XmlParser {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            db.close();
         }
-        return items;
-    }
-
-    public List<OrderItem> search(String str, List<OrderItem> items) {
-        List<OrderItem> filterList = new ArrayList<OrderItem>();
-
-        label:
-        for (OrderItem item: items) {
-            if (str.equals(item.getId()) || str.equals(item.getName()) || str.equals(item.getPhone())) {
-                filterList.add(item);
-                continue label;
-            }
-            for (ProductItem prod: item.getProducts()) {
-                if (str.equals(prod.getSku()) || str.equals(prod.getName())) {
-                    filterList.add(item);
-                    continue label;
-                }
-            }
-        }
-        return filterList;
+        return sqlHelper;
     }
 }
