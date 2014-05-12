@@ -82,13 +82,19 @@ public class SQLHelper extends SQLiteOpenHelper {
 
     public Cursor getAllOrders() {
         String buildSQL = "SELECT * FROM " + OrderEntry.TABLE_NAME;
-        SQLiteDatabase db = this.getReadableDatabase();
-        return db.rawQuery(buildSQL, null);
+        return this.getReadableDatabase().rawQuery(buildSQL, null);
     }
 
     public Cursor getProducts(Integer order_id) {
         String buildSQL = "SELECT * FROM " + ProductEntry.TABLE_NAME + " WHERE "+ProductEntry.ORDER_REF+"="+order_id;
-        SQLiteDatabase db = this.getReadableDatabase();
-        return db.rawQuery(buildSQL, null);
+        return this.getReadableDatabase().rawQuery(buildSQL, null);
+    }
+
+    public Cursor getOrdersByQuery(String query) {
+        String buildSQL = "SELECT * FROM " + OrderEntry.TABLE_NAME + " WHERE "+
+                OrderEntry.ID+"='"+query+"' OR "+
+                OrderEntry.NAME+" LIKE '%"+query+"%' OR "+
+                OrderEntry.PHONE+"='"+query+"'";
+        return this.getReadableDatabase().rawQuery(buildSQL, null);
     }
 }

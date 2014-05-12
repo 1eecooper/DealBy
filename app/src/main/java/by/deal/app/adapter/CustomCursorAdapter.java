@@ -12,14 +12,15 @@ import by.deal.app.sql.Contract.*;
 
 import by.deal.app.R;
 import by.deal.app.sql.SQLHelper;
+import by.deal.app.ui.OrdersActivity;
 
 public class CustomCursorAdapter extends CursorAdapter {
 
-    SQLHelper mSQLHelper;
+    Context mContext;
 
-    public CustomCursorAdapter(Context context, Cursor cursor, int flags, SQLHelper sqlHelper) {
+    public CustomCursorAdapter(Context context, Cursor cursor, int flags) {
         super(context, cursor, flags);
-        mSQLHelper = sqlHelper;
+        mContext = context;
     }
 
     @Override
@@ -46,7 +47,7 @@ public class CustomCursorAdapter extends CursorAdapter {
             }
         }
         String products = "";
-        Cursor cur = mSQLHelper.getProducts(order_id);
+        Cursor cur = ((OrdersActivity)mContext).getSQLHelper().getProducts(order_id);
         while (cur.moveToNext()) {
             products += cur.getString(cur.getColumnIndexOrThrow(ProductEntry.NAME))+" ";
         }

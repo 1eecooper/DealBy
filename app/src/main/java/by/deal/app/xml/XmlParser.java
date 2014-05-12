@@ -42,15 +42,13 @@ public class XmlParser {
     static final String PRODUCT_SKU = "sku";
 
     public SQLHelper readXml(InputStream inputStream, SQLHelper sql) {
-        SQLHelper sqlHelper = sql;
-        SQLiteDatabase db = sqlHelper.getWritableDatabase();
-        sqlHelper.clearTables(db);
+        SQLiteDatabase db = sql.getWritableDatabase();
+        sql.clearTables(db);
         ContentValues orderValues = new ContentValues();
         try {
             XmlPullParser parser = Xml.newPullParser();
             parser.setFeature(XmlPullParser.FEATURE_PROCESS_NAMESPACES, false);
             parser.setInput(inputStream, null);
-            long newRowId;
             Integer currentOrderId = -1;
 
             outer:
@@ -179,6 +177,6 @@ public class XmlParser {
         } finally {
             db.close();
         }
-        return sqlHelper;
+        return sql;
     }
 }
