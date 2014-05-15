@@ -14,13 +14,10 @@ import by.deal.app.R;
 import by.deal.app.sql.SQLHelper;
 import by.deal.app.ui.OrdersActivity;
 
-public class CustomCursorAdapter extends CursorAdapter {
+public class OrdersCursorAdapter extends CursorAdapter {
 
-    Context mContext;
-
-    public CustomCursorAdapter(Context context, Cursor cursor, int flags) {
+    public OrdersCursorAdapter(Context context, Cursor cursor, int flags) {
         super(context, cursor, flags);
-        mContext = context;
     }
 
     @Override
@@ -47,7 +44,7 @@ public class CustomCursorAdapter extends CursorAdapter {
             }
         }
         String products = "";
-        Cursor cur = ((OrdersActivity)mContext).getSQLHelper().getProducts(order_id);
+        Cursor cur = SQLHelper.getInstance(context.getApplicationContext()).getProducts(order_id);
         while (cur.moveToNext()) {
             products += cur.getString(cur.getColumnIndexOrThrow(ProductEntry.NAME))+" ";
         }
@@ -55,8 +52,10 @@ public class CustomCursorAdapter extends CursorAdapter {
             line_two.setText(price+" грн - "+products);
         }
 
+        String time = cursor.getString(cursor.getColumnIndexOrThrow(OrderEntry.DATE));
+        time = time.substring(9, time.length());
         if (time_line != null) {
-            time_line.setText(cursor.getString(cursor.getColumnIndexOrThrow(OrderEntry.DATE)));
+            time_line.setText(time);
         }
     }
 

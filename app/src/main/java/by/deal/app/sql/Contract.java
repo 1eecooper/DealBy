@@ -6,7 +6,7 @@ public class Contract {
     public Contract() {}
 
     public static abstract class OrderEntry implements BaseColumns {
-        public static final String TABLE_NAME = "orders";
+        public static final String TABLE_NAME = "orders_main";
         public static final String ID = "id";
         public static final String STATE = "state";
         public static final String DATE = "date";

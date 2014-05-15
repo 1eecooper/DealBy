@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/padding_main">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/order_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Номер заказа" />
+
+            <TextView
+                android:id="@+id/order_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Заказчик" />
+
+            <TextView
+                android:id="@+id/order_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Дата" />
+
+            <TextView
+                android:id="@+id/order_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Телефон" />
+
+            <TextView
+                android:id="@+id/order_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email" />
+
+            <TextView
+                android:id="@+id/order_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Адрес доставки" />
+
+            <TextView
+                android:id="@+id/order_company"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Компания" />
+
+        </LinearLayout>
+
+        <include layout="@layout/products_list" />
+
+        <TextView
+            android:id="@+id/order_total_price"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="TotalPrice"
+            android:textSize="32dp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+</ScrollView>
